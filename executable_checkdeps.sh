@@ -16,7 +16,8 @@ function main {
   local missing_count=0
 
   while IFS="" read -r executable || [ -n "$executable" ]; do
-    local path=$(which ${executable})
+    local name=${executable[0]}
+    local path=$(which ${name})
 
     if [[ ! -f "$path" || ! -x "$path" ]]; then
       echo "Missing executable: $executable"
