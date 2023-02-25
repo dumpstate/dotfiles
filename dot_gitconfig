@@ -1,0 +1,17 @@
+[user]
+email = asadowski@mailbox.org
+name = Albert Sadowski
+
+[alias]
+lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+st = status
+co = checkout
+br = branch
+amend = commit --amend
+
+[core]
+editor = /usr/bin/vim
+pager = diff-so-fancy | less --tabs=4 -RFX
+
+[code]
+editor = /usr/bin/vim
