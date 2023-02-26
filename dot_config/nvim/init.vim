@@ -16,11 +16,20 @@ set ttyfast			" fast scrolling
 set tabstop=4			" narrow tabs
 set shiftwidth=4
 
+au BufRead,BufNewFile *.njk set filetype=html
+
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-H> <C-W><C-H>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <CR> :noh<CR><CR>
+
 call plug#begin()
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 call plug#end()
 
