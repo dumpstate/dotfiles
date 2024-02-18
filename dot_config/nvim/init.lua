@@ -52,6 +52,7 @@ require("lazy").setup({
 
 local telescope_builtin = require("telescope.builtin")
 vim.keymap.set("n", "<C-p>", telescope_builtin.find_files, {})
+vim.keymap.set("n", "fg", telescope_builtin.live_grep, {})
 
 require("nvim-tree").setup()
 vim.g.loaded_netrw = 1
