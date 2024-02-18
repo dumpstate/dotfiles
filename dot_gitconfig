@@ -10,8 +10,13 @@ br = branch
 amend = commit --amend
 
 [core]
-editor = /usr/bin/vim
+editor = nvim
 pager = diff-so-fancy | less --tabs=4 -RFX
 
 [code]
-editor = /usr/bin/vim
+editor = nvim
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
