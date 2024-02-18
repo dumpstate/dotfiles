@@ -33,21 +33,21 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    {
-        "nvim-telescope/telescope.nvim",
-        branch = "0.1.x",
-        dependencies = { "nvim-lua/plenary.nvim" },
-    },
+  {
+    "nvim-telescope/telescope.nvim",
+      branch = "0.1.x",
+      dependencies = { "nvim-lua/plenary.nvim" },
+  },
 	{
-	    "nvim-tree/nvim-tree.lua",
-	    dependencies = { "nvim-tree/nvim-web-devicons" },
-	},
-    {
-        "folke/tokyonight.nvim",
-        lazy = false,
-        priority = 1000,
-        opts = {},
-    },
+	  "nvim-tree/nvim-tree.lua",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+  },
+  {
+    "folke/tokyonight.nvim",
+      lazy = false,
+      priority = 1000,
+      opts = {},
+  },
 })
 
 local telescope_builtin = require("telescope.builtin")
