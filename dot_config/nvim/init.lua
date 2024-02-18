@@ -64,7 +64,14 @@ vim.keymap.set("n", "<C-n>", ":NvimTreeToggle<CR>", {})
 vim.cmd[[colorscheme tokyonight]]
 
 require("nvim-treesitter.configs").setup({
-    ensure_installed = { "python", "lua", "typescript", "javascript", "go" },
+    ensure_installed = {
+        "bash",
+        "go",
+        "javascript",
+        "lua",
+        "python",
+        "typescript",
+    },
     sync_install = false,
     auto_install = true,
     highlight = {
