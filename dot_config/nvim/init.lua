@@ -11,6 +11,7 @@ vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.termguicolors = true
+vim.opt.encoding = "UTF-8"
 
 vim.api.nvim_set_keymap("n", "<C-J>", "<C-W><C-J>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<C-H>", "<C-W><C-H>", { noremap = true })
@@ -26,7 +27,7 @@ if not vim.loop.fs_stat(lazypath) then
     "clone",
     "--filter=blob:none",
     "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
+    "--branch=stable",
     lazypath,
   })
 end
@@ -48,6 +49,7 @@ require("lazy").setup({
       priority = 1000,
       opts = {},
   },
+  { "nvim-treesiter/nvim-treesitter" },
 })
 
 local telescope_builtin = require("telescope.builtin")
@@ -60,3 +62,12 @@ vim.g.loaded_netrwPlugin = 1
 vim.keymap.set("n", "<C-n>", ":NvimTreeToggle<CR>", {})
 
 vim.cmd[[colorscheme tokyonight]]
+
+require("nvim-treesitter.configs").setup({
+    ensure_installed = { "python", "lua", "typescript", "javascript", "go" },
+    sync_install = false,
+    auto_install = true,
+    highlight = {
+        enable = true,
+    },
+})
